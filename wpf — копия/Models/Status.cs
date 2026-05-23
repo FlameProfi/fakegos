@@ -1,13 +1,13 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Khrameeva3.Models;
 
-public partial class Manufacturer
+public partial class Status
 {
     public int Id { get; set; }
 
     public string Name { get; set; } = null!;
 
-    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }

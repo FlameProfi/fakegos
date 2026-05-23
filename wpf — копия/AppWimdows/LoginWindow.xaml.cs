@@ -39,7 +39,7 @@ namespace Khrameeva3.AppWimdows
                 return;
             }
 
-            MessageBox.Show($"добро пожаловать, {user.FullName} ");
+            MessageBox.Show($"добро пожаловать, {user.Name} ");
 
             var mainWindow = new MainAppWindow(_context, user);
             mainWindow.Show();

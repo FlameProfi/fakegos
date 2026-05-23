@@ -43,7 +43,7 @@ namespace Khrameeva3.AppPages
             _titleTB.Text = "Заказы";
             var orders = _context.Orders
                 .Include(x => x.Status)
-                .Include(x => x.Point)
+                .Include(x => x.AdressPVZ)
                 .ToList();
 
             OrdersLW.ItemsSource = orders;

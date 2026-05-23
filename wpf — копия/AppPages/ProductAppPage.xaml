@@ -18,10 +18,10 @@
 
             <TextBlock Text="Cортировка:"/>
             <ComboBox x:Name="SortCB" SelectionChanged="SortCB_SelectionChanged">
-                <ComboBoxItem Tag="QuanityPlus" >
+                <ComboBoxItem Tag="CountPlus" >
                     <TextBlock Text="По возрастанию количества"/>
                 </ComboBoxItem>
-                <ComboBoxItem Tag="QuanityMinus">
+                <ComboBoxItem Tag="CountMinus">
                     <TextBlock Text="По убыванию количества"/>
                 </ComboBoxItem>
             </ComboBox>
@@ -44,19 +44,19 @@
                                 <DockPanel LastChildFill="False">
                                     <TextBlock Text="{Binding Category.Name}"/>
                                     <TextBlock Text=" | "/>
-                                    <TextBlock Text="{Binding TypeId}"/>
+                                    <TextBlock Text="{Binding Name}"/>
                                 </DockPanel>
                                 <DockPanel LastChildFill="False">
                                     <TextBlock Text="Описание товара:"/>
-                                    <TextBlock Text="{Binding Description}"/>
+                                    <TextBlock Text="{Binding Discription}"/>
                                 </DockPanel>
                                 <DockPanel LastChildFill="False">
                                     <TextBlock Text="Производитель:"/>
-                                    <TextBlock Text="{Binding Manufacturer.Name}"/>
+                                    <TextBlock Text="{Binding Macker.Name}"/>
                                 </DockPanel>
                                 <DockPanel LastChildFill="False">
                                     <TextBlock Text="Поставщик:"/>
-                                    <TextBlock Text="{Binding Supplier.Name}"/>
+                                    <TextBlock Text="{Binding Supllier.Name}"/>
                                 </DockPanel>
 
                                 <DockPanel LastChildFill="False">
@@ -70,7 +70,7 @@
                                 </DockPanel>
                                 <DockPanel LastChildFill="False">
                                     <TextBlock Text="Количество на складе:"/>
-                                    <TextBlock Text="{Binding QuanityInStock}" Background="{Binding QuanityBackground}"/>
+                                    <TextBlock Text="{Binding CountInStock}" Background="{Binding CountBackground}"/>
                                 </DockPanel>
 
                             </StackPanel>
