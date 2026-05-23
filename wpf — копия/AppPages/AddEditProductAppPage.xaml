@@ -24,15 +24,15 @@
             </DockPanel>
             <DockPanel LastChildFill="False">
                 <TextBlock Text="Описание товара:"/>
-                <TextBox Text="{Binding Description}" MinWidth="100"/>
+                <TextBox Text="{Binding Discription}" MinWidth="100"/>
             </DockPanel>
             <DockPanel LastChildFill="False">
                 <TextBlock Text="Производитель:"/>
-                <ComboBox x:Name="ManufacturerCB" MinWidth="100"/>
+                <ComboBox x:Name="MackerCB" MinWidth="100"/>
             </DockPanel>
             <DockPanel LastChildFill="False">
                 <TextBlock Text="Поставщик:"/>
-                <ComboBox x:Name="SupplierCB" MinWidth="100"/>
+                <ComboBox x:Name="SupllierCB" MinWidth="100"/>
             </DockPanel>
             <DockPanel LastChildFill="False">
                 <TextBlock Text="Цена:"/>
@@ -44,7 +44,7 @@
             </DockPanel>
             <DockPanel LastChildFill="False">
                 <TextBlock Text="Количество на складе:"/>
-                <TextBox Text="{Binding QuanityInStock}" MinWidth="100"/>
+                <TextBox Text="{Binding CountInStock}" MinWidth="100"/>
             </DockPanel>
             <DockPanel LastChildFill="False">
                 <TextBlock Text="Действующая скидка:"/>

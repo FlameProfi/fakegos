@@ -50,7 +50,7 @@ namespace Khrameeva3.AppPages
                 return;
             }
 
-            if (_selectionItem.QuanityInStock < 0)
+            if (_selectionItem.CountInStock < 0)
             {
                 MessageBox.Show("Количество на слкаде не может быть отрицательным!");
                 return;
@@ -61,13 +61,13 @@ namespace Khrameeva3.AppPages
             var category = _context.Categories.FirstOrDefault(x => x.Name == selectionCategory);
             _selectionItem.CategoryId = category.Id;
 
-            string selectionManufacturer = (string)ManufacturerCB.SelectedItem;
-            var Manufacturer = _context.Manufacturers.FirstOrDefault(x => x.Name == selectionManufacturer);
-            _selectionItem.Manufacturer = Manufacturer;
+            string selectionMacker = (string)MackerCB.SelectedItem;
+            var Macker = _context.Mackers.FirstOrDefault(x => x.Name == selectionMacker);
+            _selectionItem.MackerId = Macker.Id;
 
-            string selectionSupplier = (string)SupplierCB.SelectedItem;
-            var supplier = _context.Suppliers.FirstOrDefault(x => x.Name == selectionSupplier);
-            _selectionItem.SupplierId = supplier.Id;
+            string selectionSupllier = (string)SupllierCB.SelectedItem;
+            var supplier = _context.Suplliers.FirstOrDefault(x => x.Name == selectionSupllier);
+            _selectionItem.SupllierId = supplier.Id;
 
             string selectionUnit = (string)UnitCB.SelectedItem;
             var unit = _context.Units.FirstOrDefault(x => x.Name == selectionUnit);
@@ -75,7 +75,7 @@ namespace Khrameeva3.AppPages
 
             if (_selectionItem.Id == 0)
             {
-                _selectionItem.Article = "123";
+                _selectionItem.Articul = "123";
                 _context.Products.Add(_selectionItem);
             }
 
@@ -99,11 +99,11 @@ namespace Khrameeva3.AppPages
             var productCategoty = _context.Categories.Select(x => x.Name).ToList();
             CategoryCB.ItemsSource = productCategoty;
 
-            var productManufacturer = _context.Manufacturers.Select(x => x.Name).ToList();
-            ManufacturerCB.ItemsSource = productManufacturer;
+            var productMacker = _context.Mackers.Select(x => x.Name).ToList();
+            MackerCB.ItemsSource = productMacker;
 
-            var productSupplier = _context.Suppliers.Select(x => x.Name).ToList();
-            SupplierCB.ItemsSource = productSupplier;
+            var productSupllier = _context.Suplliers.Select(x => x.Name).ToList();
+            SupllierCB.ItemsSource = productSupllier;
 
             var productUnit = _context.Units.Select(x => x.Name).ToList();
             UnitCB.ItemsSource = productUnit;
@@ -113,8 +113,8 @@ namespace Khrameeva3.AppPages
                 DeleteBTN.Visibility = Visibility.Visible;
                 IdDP.Visibility = Visibility.Visible;
                 CategoryCB.SelectedItem = _selectionItem.Category.Name;
-                ManufacturerCB.SelectedItem = _selectionItem.Manufacturer.Name;
-                SupplierCB.SelectedItem = _selectionItem.Supplier.Name;
+                MackerCB.SelectedItem = _selectionItem.Macker.Name;
+                SupllierCB.SelectedItem = _selectionItem.Supllier.Name;
                 UnitCB.SelectedItem = _selectionItem.Unit.Name;
             }
 

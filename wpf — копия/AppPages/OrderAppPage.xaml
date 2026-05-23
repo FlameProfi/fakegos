@@ -26,7 +26,7 @@
                             <StackPanel>
                                 <DockPanel>
                                     <TextBlock Text="Артикул заказа: "/>
-                                    <TextBlock Text="{Binding Article}"/>
+                                    <TextBlock Text="{Binding Articul}"/>
                                 </DockPanel>
                                 <DockPanel>
                                     <TextBlock Text="Статус заказа: "/>
@@ -34,18 +34,18 @@
                                 </DockPanel>
                                 <DockPanel>
                                     <TextBlock Text="Адрес пункта выдачи: "/>
-                                    <TextBlock Text="{Binding Point.Name}"/>
+                                    <TextBlock Text="{Binding AdressPVZ.FullName}"/>
                                 </DockPanel>
                                 <DockPanel>
                                     <TextBlock Text="Дата заказа: "/>
-                                    <TextBlock Text="{Binding OrderDate}"/>
+                                    <TextBlock Text="{Binding DateOrder}"/>
                                 </DockPanel>
 
                             </StackPanel>
 
                             <DockPanel>
                                 <TextBlock Text="Дата доставки: "/>
-                                <TextBlock Text="{Binding DeliveryDate}"/>
+                                <TextBlock Text="{Binding DateDelivery}"/>
                             </DockPanel>
                         </DockPanel>
                     </Border>

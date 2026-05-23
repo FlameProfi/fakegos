@@ -46,7 +46,7 @@ namespace Khrameeva3.AppWimdows
             }
             else
             {
-                FioTB.Text = user.FullName;
+                FioTB.Text = user.Name;
             }
 
             if (_user.RoleId == 2 || _user.RoleId == 3)

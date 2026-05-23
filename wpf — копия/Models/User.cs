@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Khrameeva3.Models;
@@ -9,7 +9,11 @@ public partial class User
 
     public int RoleId { get; set; }
 
-    public string FullName { get; set; } = null!;
+    public string Lastname { get; set; } = null!;
+
+    public string Name { get; set; } = null!;
+
+    public string Patronimic { get; set; } = null!;
 
     public string Login { get; set; } = null!;
 
@@ -17,5 +21,5 @@ public partial class User
 
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
-    public virtual Role Role { get; set; } = null!;
+    public virtual RolesUser Role { get; set; } = null!;
 }

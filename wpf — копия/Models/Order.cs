@@ -1,4 +1,5 @@
-﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using System;
 using System.Collections.Generic;
 
 namespace Khrameeva3.Models;
@@ -7,29 +8,31 @@ public partial class Order
 {
     public int Id { get; set; }
 
-    public int OrderNumber { get; set; }
+    public int TovarId { get; set; }
 
-    public string Article { get; set; } = null!;
+    public int Count { get; set; }
 
-    public int Quanity { get; set; }
+    public DateTime DateOrder { get; set; }
 
-    public DateOnly OrderDate { get; set; }
+    public DateTime DateDelivery { get; set; }
 
-    public DateOnly DeliveriDate { get; set; }
+    public int PVZId { get; set; }
 
-    public int PointId { get; set; }
+    public int User_id { get; set; }
 
-    public int UserId { get; set; }
-
-    public int Code { get; set; }
+    public int IssueCode { get; set; }
 
     public int StatusId { get; set; }
 
-    public virtual Point Point { get; set; } = null!;
+    public int NumderOrder { get; set; }
+    [NotMapped]
+    public string Articul => Product?.Articul ?? "";
 
-    public virtual Statue Status { get; set; } = null!;
+    public virtual AdressPVZ AdressPVZ { get; set; } = null!;
+
+    public virtual Status Status { get; set; } = null!;
 
     public virtual User User { get; set; } = null!;
 
-    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
+    public virtual Product Product { get; set; } = null!;
 }

@@ -36,11 +36,11 @@ namespace Khrameeva3.AppPages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            var orderStatus = _context.Statues.Select(x => x.Name).ToList();
+            var orderStatus = _context.Statuses.Select(x => x.Name).ToList();
             StatusCB.ItemsSource = orderStatus;
 
-            var orderPoint = _context.Points.Select(x => x.Name).ToList();
-            PointCB.ItemsSource = orderPoint;
+            var orderAdressPVZ = _context.AdressPVZs.Select(x => x.FullName).ToList();
+            AdressPVZCB.ItemsSource = orderAdressPVZ;
 
             if (_selectedOrder == null)
             {
@@ -54,7 +54,7 @@ namespace Khrameeva3.AppPages
                 _titleTB.Text = "Редактирование заказа";
                 DeleteBTN.Visibility = Visibility.Visible;
                 StatusCB.SelectedItem = _selectedOrder.Status.Name;
-                PointCB.SelectedItem = _selectedOrder.Point.Name;
+                AdressPVZCB.SelectedItem = _selectedOrder.AdressPVZ.FullName;
             }
 
 
@@ -63,12 +63,12 @@ namespace Khrameeva3.AppPages
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
         {
             string statusName = (string)StatusCB.SelectedItem;
-            var status = _context.Statues.FirstOrDefault(x => x.Name == statusName);
+            var status = _context.Statuses.FirstOrDefault(x => x.Name == statusName);
             _selectedOrder.StatusId = status.Id;
 
-            string pointName = (string)PointCB.SelectedItem;
-            var point = _context.Points.FirstOrDefault(x => x.Name == pointName);
-            _selectedOrder.PointId = point.Id;
+            string pointName = (string)AdressPVZCB.SelectedItem;
+            var point = _context.AdressPVZs.FirstOrDefault(x => x.FullName == pointName);
+            _selectedOrder.PVZId = point.Id;
 
             if (_selectedOrder.Id == 0)
             {

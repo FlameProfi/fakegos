@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Khrameeva3.Models;
 
-public partial class Supplier
+public partial class Macker
 {
     public int Id { get; set; }
 
