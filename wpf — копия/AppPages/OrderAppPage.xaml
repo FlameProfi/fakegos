@@ -1,0 +1,56 @@
+﻿<Page x:Class="Khrameeva3.AppPages.OrderAppPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Khrameeva3.AppPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OrderAppPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" LastChildFill="False">
+            <Button x:Name="AddOrderBTN" Click="AddOrderBTN_Click" Visibility="Hidden" >Добавить заказ</Button>
+        </DockPanel>
+
+
+        <ListView x:Name="OrdersLW" SelectionChanged="OrdersLW_SelectionChanged" Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1" BorderBrush="Black">
+                        <DockPanel>
+                            <StackPanel>
+                                <DockPanel>
+                                    <TextBlock Text="Артикул заказа: "/>
+                                    <TextBlock Text="{Binding Article}"/>
+                                </DockPanel>
+                                <DockPanel>
+                                    <TextBlock Text="Статус заказа: "/>
+                                    <TextBlock Text="{Binding Status.Name}"/>
+                                </DockPanel>
+                                <DockPanel>
+                                    <TextBlock Text="Адрес пункта выдачи: "/>
+                                    <TextBlock Text="{Binding Point.Name}"/>
+                                </DockPanel>
+                                <DockPanel>
+                                    <TextBlock Text="Дата заказа: "/>
+                                    <TextBlock Text="{Binding OrderDate}"/>
+                                </DockPanel>
+
+                            </StackPanel>
+
+                            <DockPanel>
+                                <TextBlock Text="Дата доставки: "/>
+                                <TextBlock Text="{Binding DeliveryDate}"/>
+                            </DockPanel>
+                        </DockPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
